@@ -1,0 +1,33 @@
+# Archivos que no deben versionarse
+
+# Dependencias
+node_modules/
+
+# Builds
+frontend/build/
+backend/build/
+backend/dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+backend/venv/
+venv/
+
+# Entornos y credenciales
+.env
+*.env
+!*.env.example
+backend/firebase_service_account.json
+var_firebase.txt
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+# Dependencias del backend Flask
+Flask==3.0.3
+flask-cors==4.0.1
+firebase-admin==6.5.0
+python-dotenv==1.0.1
+
+# Servidor WSGI de producción (Windows-compatible)
+waitress==3.0.0
+
+# Servidor WSGI para Linux/Cloud Run
+gunicorn==22.0.0

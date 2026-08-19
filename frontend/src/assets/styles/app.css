@@ -1,0 +1,762 @@
+/* ==========================================================================
+   Hoja de estilos principal del frontend.
+   Diseño minimalista: paleta monocroma, tipografía limpia, bordes finos,
+   mucho espacio en blanco y un único acento de color (rojo solo para
+   acciones destructivas).
+   ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --border: #ececec;
+  --border-strong: #d4d4d4;
+  --text: #111111;
+  --text-muted: #8a8a8a;
+  --accent: #111111;
+  --danger: #d64545;
+  --danger-soft: #fdf0f0;
+  --focus: #111111;
+  --radius: 8px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* -------------------------------- Navbar -------------------------------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.navbar-logo {
+  font-size: 1.1rem;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Navegación principal */
+.navbar-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--border);
+}
+
+.nav-link-active {
+  color: var(--text);
+  background: var(--border);
+}
+
+.navbar-user {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-right: 8px;
+}
+
+/* -------------------------------- Botones ------------------------------- */
+.btn {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.btn:hover {
+  border-color: var(--text);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #333;
+  border-color: #333;
+}
+
+.btn-danger {
+  color: var(--danger);
+  border-color: var(--danger);
+  background: transparent;
+}
+
+.btn-danger:hover {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  border-radius: 6px;
+}
+
+/* -------------------------------- Tarjetas ------------------------------ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 40px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.card-header h2 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.card-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ----------------------------- Cabecera de página ----------------------- */
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.page-head h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+.component-detail {
+  max-width: 720px;
+}
+
+/* -------------------------------- Login --------------------------------- */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 20px;
+}
+
+.login-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-logo {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.login-card h1 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.login-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 28px;
+}
+
+.login-card .form-group {
+  text-align: left;
+}
+
+/* ------------------------------- Formularios ---------------------------- */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.search-input,
+.filter-select,
+.stock-input-group input,
+.price-input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--text);
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.search-input:focus,
+.filter-select:focus,
+.stock-input-group input:focus,
+.price-input-group input:focus {
+  outline: none;
+  border-color: var(--text);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------- Alertas ------------------------------- */
+.alert {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.alert-error {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+/* -------------------------------- Modal --------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 520px;
+  padding: 28px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.modal-close:hover {
+  color: var(--text);
+}
+
+.modal-footer-inline {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* ------------------------------ Categorías ------------------------------ */
+.category-list {
+  list-style: none;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+.category-name {
+  font-size: 0.95rem;
+}
+
+.category-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ------------------------- Componentes (secciones) ---------------------- */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.filter-select {
+  width: auto;
+  min-width: 180px;
+}
+
+.components-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cada componente es una sección separada a ancho completo. */
+.component-section {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  background: var(--surface);
+}
+
+.component-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.component-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.component-actions .btn {
+  white-space: nowrap;
+}
+
+.component-title h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.component-category {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.component-specs {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* ---------------------------- Control de stock -------------------------- */
+.stock-control {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+
+.stock-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stock-adjust label,
+.price-adjust label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.stock-input-group,
+.price-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.stock-input-group input {
+  width: 68px;
+}
+
+.price-input-group input {
+  width: 110px;
+}
+
+.stock-badge {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.stock-badge.stock-empty {
+  color: var(--danger);
+}
+
+/* ---------------------------- Lista de filas ---------------------------- */
+.row-list {
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.row-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 80px 90px auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.row-item:last-child {
+  border-bottom: none;
+}
+
+.row-item:hover {
+  background: #fafafa;
+}
+
+.row-item-title {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.row-item-title:hover {
+  text-decoration: underline;
+}
+
+.row-item-category {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.row-item-stock {
+  text-align: right;
+  font-weight: 500;
+}
+
+.row-item-price {
+  text-align: right;
+  font-weight: 600;
+}
+
+.row-item-link {
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.row-item-actions {
+  display: flex;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .row-item {
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+  }
+
+  .row-item-category,
+  .row-item-stock,
+  .row-item-price,
+  .row-item-link {
+    display: none;
+  }
+}
+
+/* -------------------------------- Varios -------------------------------- */
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 40px 16px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+/* -------------------------------- Spinner ------------------------------- */
+.spinner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  gap: 12px;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border);
+  border-top-color: var(--text);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------------------------- Toast --------------------------------- */
+.toast-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  animation: slideIn 0.2s ease;
+  max-width: 320px;
+}
+
+.toast-success {
+  background: var(--accent);
+}
+
+.toast-error {
+  background: var(--danger);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ------------------------------ Responsive ------------------------------ */
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px 60px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-actions {
+    width: 100%;
+  }
+
+  .stock-row {
+    flex-direction: column;
+  }
+
+  .component-head {
+    flex-wrap: wrap;
+  }
+
+  .component-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

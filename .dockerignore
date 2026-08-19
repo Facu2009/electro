@@ -1,0 +1,31 @@
+# Excluye del contexto de Docker los archivos que no se necesitan en el deploy.
+
+# Dependencias y builds locales
+node_modules/
+frontend/build/
+backend/build/
+backend/dist/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+backend/venv/
+
+# Entornos y credenciales (nunca al contenedor)
+.env
+*.env
+!*.env.example
+backend/firebase_service_account.json
+var_firebase.txt
+
+# Sistema
+.git/
+.gitignore
+.DS_Store
+Thumbs.db
+README.md
+
+# Otros
+*.zip
+*.log

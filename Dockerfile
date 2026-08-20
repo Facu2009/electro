@@ -18,6 +18,9 @@ RUN npm ci
 # Copia el código y compila.
 COPY frontend/public ./public
 COPY frontend/src ./src
+
+# La config web de Firebase (pública) se inyecta en el bundle al compilar.
+COPY frontend/.env.production ./.env.production
 RUN npm run build
 
 # --- Etapa 2: runtime Python ----------------------------------------------

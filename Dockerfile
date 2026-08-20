@@ -7,7 +7,7 @@
 # ==========================================================================
 
 # --- Etapa 1: compilar frontend -------------------------------------------
-FROM node:20-alpine AS frontend-build
+FROM node:22-alpine AS frontend-build
 
 WORKDIR /app/frontend
 
@@ -40,5 +40,5 @@ WORKDIR /app/backend
 
 EXPOSE 8080
 
-# Cloud Run inyecta la variable PORT (default 8080) al contenedor.
-CMD gunicorn --bind 0.0.0.0:${PORT} --workers 2 --timeout 120 app:app
+# 1 worker para entrar bien en la RAM del plan gratuito de Render.
+CMD gunicorn --bind 0.0.0.0:${PORT} --workers 1 --timeout 120 app:app
